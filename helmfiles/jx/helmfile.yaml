@@ -20,7 +20,7 @@ releases:
   - ../../versionStream/charts/bitnami/external-dns/values.yaml.gotmpl
   - jx-values.yaml
 - chart: jxgh/acme
-  version: 0.0.24
+  version: 0.0.26
   condition: jxRequirementsIngressTLS.enabled
   name: acme-jx
   values:
@@ -61,8 +61,8 @@ releases:
   values:
   - ../../versionStream/charts/jxgh/nexus/values.yaml.gotmpl
   - jx-values.yaml
-- chart: stable/chartmuseum
-  version: 2.14.2
+- chart: chartmuseum/chartmuseum
+  version: 3.9.1
   name: chartmuseum
   values:
   - ../../versionStream/charts/stable/chartmuseum/values.yaml.gotmpl
@@ -74,7 +74,7 @@ releases:
   - ../../versionStream/charts/jxgh/jx-build-controller/values.yaml.gotmpl
   - jx-values.yaml
 - chart: jxgh/jx-kh-check
-  version: 0.0.78
+  version: 0.0.80
   condition: jxRequirementsKuberhealthy.enabled
   name: health-checks-jx
   values:
