@@ -15,6 +15,7 @@ service:
 
 # GKE Autopilot not support specific replica count   
 #replicaCount: 2
+replicaCount: 0
 
 {{- if eq .Values.jxRequirements.cluster.provider "gke" }}
 logFormat: "stackdriver"
