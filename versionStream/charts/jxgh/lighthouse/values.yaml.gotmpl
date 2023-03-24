@@ -12,8 +12,9 @@ git:
 
 service:
   name: hook
-  
-replicaCount: 2
+
+# GKE Autopilot not support specific replica count   
+#replicaCount: 2
 
 {{- if eq .Values.jxRequirements.cluster.provider "gke" }}
 logFormat: "stackdriver"
