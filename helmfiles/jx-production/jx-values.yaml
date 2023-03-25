@@ -20,29 +20,47 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: autopilot-cluster-jx
     devEnvApprovers:
-    - todo
-    environmentGitOwner: todo
+    - ram4444
+    environmentGitOwner: dionysbiz
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    gke:
+      projectNumber: "645272267494"
     kanikoFlags: --skip-unused-stages --snapshotMode=redo
+    project: dionysbiz
     provider: gke
     registry: gcr.io
+    zone: europe-west2
   environments:
   - key: dev
+    owner: dionysbiz
+    repository: jx3-gke-gsm
   - key: staging
   - key: production
   ingress:
-    domain: dionysbiz.xyz
+    domain: change.me
     kind: ingress
     namespaceSubDomain: -jx-production.
     tls:
       email: ""
       enabled: false
-      production: false
+      production: true
+  kuberhealthy: true
+  pipelineUser:
+    username: dionysbot
   repository: nexus
   secretStorage: gsm
+  storage:
+  - name: logs
+    url: gs://logs-autopilot-cluster-jx-db103ff19b34
+  - name: reports
+    url: gs://reports-autopilot-cluster-jx-db103ff19b34
+  - name: repository
+    url: gs://repository-autopilot-cluster-jx-db103ff19b34
   vault: {}
   webhook: lighthouse
 jxRequirementsIngressExternalDNS:
@@ -50,7 +68,7 @@ jxRequirementsIngressExternalDNS:
 jxRequirementsIngressTLS:
   enabled: false
 jxRequirementsKuberhealthy:
-  enabled: false
+  enabled: true
 jxRequirementsTLSCheck:
   enabled: false
 jxRequirementsVault:

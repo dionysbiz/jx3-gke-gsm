@@ -1,0 +1,25 @@
+# Source: chartmuseum/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-x-chartmuseum
+  labels:
+    helm.sh/chart: chartmuseum-3.9.1
+    app.kubernetes.io/name: chartmuseum
+    app.kubernetes.io/instance: chartmuseum
+    app.kubernetes.io/version: "0.15.0"
+    app.kubernetes.io/managed-by: Helm
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'chartmuseum'
+  namespace: jx
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: http
+    name: http
+    protocol: TCP
+  selector:
+    app.kubernetes.io/name: chartmuseum
+    app.kubernetes.io/instance: chartmuseum
