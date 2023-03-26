@@ -10,6 +10,12 @@ spec:
     repositories:
     - name: demo-php-helloworld
     scheduler: in-repo
+  - owner: dionysbot
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: demo-spring3
+    scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
     kind: failureOrNextSuccess
