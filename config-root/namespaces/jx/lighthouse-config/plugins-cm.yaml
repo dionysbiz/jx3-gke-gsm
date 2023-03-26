@@ -6,6 +6,10 @@ data:
       repos:
       - dionysbiz/jx3-gke-gsm
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - dionysbiz/demo-php-helloworld
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      dionysbiz/demo-php-helloworld:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       dionysbiz/jx3-gke-gsm:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,20 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      dionysbiz/demo-php-helloworld:
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
       dionysbiz/jx3-gke-gsm:
       - config-updater
       - approve
@@ -53,6 +76,11 @@ data:
     - repos:
       - dionysbiz/jx3-gke-gsm
       trusted_org: dionysbiz
+    - repos:
+      - dionysbiz/demo-php-helloworld
+      trusted_org: dionysbiz
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
