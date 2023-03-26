@@ -20,4 +20,4 @@ spec:
             port:
               number: 80
         path: "/hook"
-    host: hook-jx.34.105.248.218.nip.io
+    host: hook-jx.dionysbiz.xyz

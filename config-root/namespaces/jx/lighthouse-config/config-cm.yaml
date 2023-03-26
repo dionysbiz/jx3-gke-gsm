@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - dionysbiz/jx3-gke-gsm
-      target_url: http://lighthouse-jx.34.105.248.218.nip.io/merge/status
+      target_url: http://lighthouse-jx.dionysbiz.xyz/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null

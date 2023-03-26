@@ -42,7 +42,7 @@ jxRequirements:
   - key: staging
   - key: production
   ingress:
-    domain: 34.105.248.218.nip.io
+    domain: dionysbiz.xyz
     kind: ingress
     namespaceSubDomain: -cert-manager.
     tls:
