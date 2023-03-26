@@ -27,7 +27,7 @@ spec:
   - key: staging
   - key: production
   ingress:
-    domain: dionysbiz.xyz
+    domain: 34.105.248.218.nip.io
     kind: ingress
     namespaceSubDomain: -jx.
     tls:
