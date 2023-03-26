@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: demo-php-helloworld
+    - name: jx3-gke-gsm
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
