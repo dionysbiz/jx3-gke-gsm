@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: demo-php-helloworld
+    - name: demo-spring5
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
