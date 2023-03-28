@@ -143,6 +143,11 @@ fetch: init $(COPY_SOURCE) $(REPOSITORY_RESOLVE)
 # set any missing defaults in the secrets mapping file
 	jx secret convert edit
 
+	df
+	helm version
+	helmfile -v
+	helm repo list
+	
 # lets resolve chart versions and values from the version stream
 	jx gitops helmfile resolve
 
