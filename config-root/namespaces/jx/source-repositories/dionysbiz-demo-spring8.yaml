@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: dionysbiz
+    provider: github
+    repository: demo-spring8
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: dionysbiz-demo-spring8
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/dionysbiz/demo-spring8.git
+  org: dionysbiz
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: demo-spring8
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/dionysbiz/demo-spring8

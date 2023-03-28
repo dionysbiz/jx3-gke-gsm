@@ -10,6 +10,10 @@ data:
       repos:
       - dionysbiz/demo-php-helloworld
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - dionysbiz/demo-spring8
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -25,6 +29,11 @@ data:
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
+      dionysbiz/demo-spring8:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       dionysbiz/jx3-gke-gsm:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -36,6 +45,20 @@ data:
     owners: {}
     plugins:
       dionysbiz/demo-php-helloworld:
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
+      dionysbiz/demo-spring8:
       - approve
       - assign
       - help
@@ -78,6 +101,9 @@ data:
       trusted_org: dionysbiz
     - repos:
       - dionysbiz/demo-php-helloworld
+      trusted_org: dionysbiz
+    - repos:
+      - dionysbiz/demo-spring8
       trusted_org: dionysbiz
     welcome:
     - message_template: Welcome
