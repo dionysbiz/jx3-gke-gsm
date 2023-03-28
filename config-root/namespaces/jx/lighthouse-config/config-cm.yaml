@@ -7,8 +7,6 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
-        dionysbiz/demo-php-helloworld: true
-        dionysbiz/demo-spring8: true
         dionysbiz/jx3-gke-gsm: true
     plank: {}
     pod_namespace: jx
@@ -21,8 +19,6 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
-        dionysbiz/demo-php-helloworld: merge
-        dionysbiz/demo-spring8: merge
         dionysbiz/jx3-gke-gsm: merge
       queries:
       - labels:
@@ -35,8 +31,6 @@ data:
         - needs-rebase
         repos:
         - dionysbiz/jx3-gke-gsm
-        - dionysbiz/demo-php-helloworld
-        - dionysbiz/demo-spring8
       - labels:
         - updatebot
         missingLabels:
@@ -47,8 +41,6 @@ data:
         - needs-rebase
         repos:
         - dionysbiz/jx3-gke-gsm
-        - dionysbiz/demo-php-helloworld
-        - dionysbiz/demo-spring8
       target_url: http://lighthouse-jx.34.105.248.218.nip.io/merge/status
 kind: ConfigMap
 metadata:
