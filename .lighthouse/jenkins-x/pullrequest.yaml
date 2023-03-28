@@ -26,9 +26,9 @@ spec:
           resources:
             # override requests for the pod here
             requests:
-              cpu: 0.1
+              cpu: 0.4
               ephemeral-storage: 2Gi
-              memory: 128Mi
+              memory: 512Mi
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 12h0m0s
